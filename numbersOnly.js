@@ -21,15 +21,29 @@ function numbersOnly(newArray) {
   var numArray = [];
 
   for (var i = 0; i < newArray.length; i++) {
-    if typeof(newArray(i)) === "number" {
-      numArray.push(i);
-      console.log(numArray);
-      console.log(newArray);
+    if (typeof newArray[i] === 'number') {
+      numArray.push(newArray[i]);
+      //  console.log(numArray);
+
     }
+
   }
-
   console.log(numArray);
-
 }
 
-// numbersOnly(1, 2, 3)
+numbersOnly([1, '2', 3]);
+numbersOnly([1, "two", 3, 4, 5, "what"]);
+
+/******BONUS**************/
+
+function removeNonNumbers(newArray) {
+  for (var i = 0; i < newArray.length; i++) {
+    if (typeof newArray[i] != 'number') {
+      newArray.splice(i, 1);
+    }
+  }
+  console.log(newArray);
+}
+
+removeNonNumbers([1, '2', 3]);
+removeNonNumbers([1, "two", 3, 4, 5, "what"]);
